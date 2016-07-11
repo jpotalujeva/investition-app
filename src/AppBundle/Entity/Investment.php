@@ -20,7 +20,7 @@ class Investment
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
-    private $amount;
+    private $money;
 
     /**
      * @ORM\Column(type="text")
@@ -37,17 +37,17 @@ class Investment
     /**
      * @return mixed
      */
-    public function getAmount()
+    public function getMoney()
     {
-        return $this->amount;
+        return $this->money;
     }
 
     /**
-     * @param mixed $amount
+     * @param $money
      */
-    public function setAmount($amount)
+    public function setMoney($money)
     {
-        $this->amount = $amount;
+        $this->money = $money;
     }
 
     /**

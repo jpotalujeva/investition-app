@@ -1,8 +1,10 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-{{ dump(investments) }}
-    {{ dump(user) }}
+    <p>Your investments: </p><br/>
+    {{ dump(investments) }}
+
+    <a href="{{ path('invest') }}">Makaroni</a>
 {% endblock %}
 
 {% block title %}

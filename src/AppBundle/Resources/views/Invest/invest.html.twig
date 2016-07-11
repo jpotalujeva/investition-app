@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Invest:login{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.money) }}
+    <button type="submit">Invest</button>
+    {{ form_end(form) }}
+{% endblock %}

@@ -3,8 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Investment;
+use AppBundle\Form\InvestType;
 use AppBundle\Form\UserType;
 use AppBundle\Entity\User;
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,11 +47,35 @@ class InvestController extends Controller
     {
         $investment = $this->getDoctrine()
             ->getRepository('AppBundle:Investment')
-            ->find($user_id);
+            ->findAll();
         return $this->render(
             '@App/Invest/index.html.twig', array(
             'investments' => $investment,
-            'user' => $user_id
         ));
+    }
+
+    public function investAction(Request $request)
+    {
+        $invest = new Investment();
+        $form = $this->createForm(InvestType::class, $invest);
+        $form->handleRequest($request);
+        if ($form->isSubmitted())
+        {
+            $invest->setUserId(2);
+            $invest->setInvestments('Makaroni');
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($invest);
+            $em->flush();
+
+            return $this->redirectToRoute('logged_in');
+        }
+
+        return $this->render(
+            '@App/Invest/invest.html.twig' ,array(
+                'form' => $form->createView()
+            )
+        );
+
     }
 }
