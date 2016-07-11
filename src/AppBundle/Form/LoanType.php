@@ -7,18 +7,20 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
-class InvestType extends AbstractType
+class LoanType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('money', IntegerType::class)
-                ->add('investments', IntegerType::class);
+        $builder->add('amount', IntegerType::class)
+                ->add('available_for_investments', IntegerType::class)
+                ->add('investments', IntegerType::class)
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Investment',
+            'data_class' => 'AppBundle\Entity\Loan',
         ));
     }
 }

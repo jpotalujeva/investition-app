@@ -7,3 +7,6 @@ logged_in:
 invest:
     path:    /invest
     defaults: { _controller: AppBundle:Invest:invest }
+loan:
+    path:    /loan
+    defaults: { _controller: AppBundle:Loan:giveLoan }

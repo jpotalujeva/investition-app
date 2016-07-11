@@ -3,8 +3,11 @@
 {% block body %}
     <p>Your investments: </p><br/>
     {{ dump(investments) }}
+    <p>Your loans: </p><br/>
+    {{ dump(loan) }}
 
-    <a href="{{ path('invest') }}">Makaroni</a>
+    <a href="{{ path('invest') }}">Invest</a>
+    <a href="{{ path('loan') }}">Loan</a>
 {% endblock %}
 
 {% block title %}

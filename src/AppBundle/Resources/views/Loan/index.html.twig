@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.amount) }}
+    {{ form_row(form.available_for_investments) }}
+    {{ form_row(form.investments) }}
+    <button type="submit">Give Loan</button>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

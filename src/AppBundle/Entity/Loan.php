@@ -4,6 +4,9 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+/**
+ * @ORM\Entity
+ */
 class Loan
 {
     /**
@@ -14,19 +17,19 @@ class Loan
     private $id;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
     private $amount;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
-    private $availableForInvestments;
+    private $available_for_investments;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
     private $investments;
@@ -52,15 +55,15 @@ class Loan
      */
     public function getAvailableForInvestments()
     {
-        return $this->availableForInvestments;
+        return $this->available_for_investments;
     }
 
     /**
      * @param $availableForInvestments
      */
-    public function setAvailableForInvestments($availableForInvestments)
+    public function setAvailableForInvestments($available_for_investments)
     {
-        $this->availableForInvestments = $availableForInvestments;
+        $this->available_for_investments = $available_for_investments;
     }
 
     /**
