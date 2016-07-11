@@ -10,3 +10,6 @@ invest:
 loan:
     path:    /loan
     defaults: { _controller: AppBundle:Loan:giveLoan }
+companylist:
+    path:    /companies
+    defaults: { _controller: AppBundle:Main:getCompanies }

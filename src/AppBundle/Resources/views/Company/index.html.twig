@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for company in companies %}
+        <div style="background-color: #0088CC">
+            <h3>Name: </h3>{{ company.name }}
+            <h3>Investment count: </h3>{{ company.getInvestmentCount }}
+            <h3>Loan count: </h3>{{ company.getLoanCount }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
