@@ -66,8 +66,6 @@ class InvestController extends Controller
         if ($form->isSubmitted())
         {
             $invest->setUserId(2);
-            $invest->setInvestments('Makaroni');
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($invest);
             $em->flush();
