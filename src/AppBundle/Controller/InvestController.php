@@ -2,10 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Investment;
 use AppBundle\Form\UserType;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class InvestController extends Controller
 {
@@ -29,8 +31,7 @@ class InvestController extends Controller
             $em->persist($user);
             $em->flush();
 
-
-            return $this->redirectToRoute('');
+            return $this->redirectToRoute('logged_in');
         }
 
         return $this->render(
@@ -42,6 +43,13 @@ class InvestController extends Controller
 
     public function mainAction()
     {
-        
+        $investment = $this->getDoctrine()
+            ->getRepository('AppBundle:Investment')
+            ->find($user_id);
+        return $this->render(
+            '@App/Invest/index.html.twig', array(
+            'investments' => $investment,
+            'user' => $user_id
+        ));
     }
 }

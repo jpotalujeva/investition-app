@@ -17,7 +17,6 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Investment", mappedBy="investments")
      */
     private $id;
 

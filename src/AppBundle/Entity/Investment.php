@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jpotalujeva
- * Date: 7/11/16
- * Time: 2:31 PM
- */
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-
+/**
+ * @ORM\Entity
+ */
 class Investment
 {
     /**
@@ -19,17 +17,22 @@ class Investment
     private $id;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
     private $amount;
 
     /**
-     * @ORM\Column(type="int")
+     * @ORM\Column(type="text")
      * @Assert\NotBlank()
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User", inversedBy="id")
      */
     private $investments;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    private $user_id;
 
     /**
      * @return mixed
@@ -61,6 +64,22 @@ class Investment
     public function setInvestments($investments)
     {
         $this->investments = $investments;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
     }
 
     /**
