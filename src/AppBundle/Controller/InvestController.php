@@ -51,10 +51,14 @@ class InvestController extends Controller
         $loan = $this->getDoctrine()
             ->getRepository('AppBundle:Loan')
             ->findAll();
+        $user = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->findAll();
         return $this->render(
             '@App/Invest/index.html.twig', array(
             'investments' => $investment,
-            'loan' => $loan
+            'loan' => $loan,
+            'user' =>$user
         ));
     }
 

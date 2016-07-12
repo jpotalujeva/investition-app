@@ -6,15 +6,22 @@ security:
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    jpotalujeva:
+                        password: $2y$13$wRh75wZ8sHENZx0jSeDaauhuCbPTPiJPP5MZ/SCnZYQbj0X0/takW
+                        roles: [ ROLE_USER, ROLE_ADMIN ]
+                    mandarin:
+                        password: $2y$13$MwF9pvh5EWstwoT22wRKhObpF7cLjTXiWU2drWVT2WW.9lsA5CYoK
+                        roles: ROLE_USER
+                    aleks:
+                       password: $2y$13$HTljyzyIw1ViNNwXGZ.mnOQmzWXoGS6.JwQGqTuqAIYqjybITMCOq
+                       roles: ROLE_USER
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        main:
             anonymous: ~
 #            pattern: ^/
 #            form_login:
