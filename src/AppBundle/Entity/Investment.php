@@ -31,6 +31,8 @@ class Investment
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="investments")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user_id;
 

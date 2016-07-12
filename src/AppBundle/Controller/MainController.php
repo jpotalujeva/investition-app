@@ -18,4 +18,14 @@ class MainController extends Controller
         ));
     }
 
+    public function investAction()
+    {
+       
+    }
+
+
+    public function LoanAction()
+    {
+        
+    }
 }

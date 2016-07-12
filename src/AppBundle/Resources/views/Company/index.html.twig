@@ -6,6 +6,9 @@
             <h3>Name: </h3>{{ company.name }}
             <h3>Investment count: </h3>{{ company.getInvestmentCount }}
             <h3>Loan count: </h3>{{ company.getLoanCount }}
+            <br/>
+            <a href="{{ path('invest_to_company') }}">Invest</a>
+            <a href="{{ path('loan_to_company') }}">Loan</a>
         </div>
     {% endfor %}
 {% endblock %}

@@ -16,6 +16,7 @@ class User implements UserInterface
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="Investment", mappedBy="user")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;

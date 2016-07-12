@@ -13,3 +13,9 @@ loan:
 companylist:
     path:    /companies
     defaults: { _controller: AppBundle:Main:getCompanies }
+invest_to_company:
+    path:    /invest/{company}
+    defaults: { _controller: AppBundle:Main:invest }
+loan_to_company:
+    path: /loan/{company}
+    defaults: { _controller: AppBundle:Main:Loan }
