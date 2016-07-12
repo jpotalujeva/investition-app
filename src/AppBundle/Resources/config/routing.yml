@@ -1,6 +1,9 @@
 user_registration:
-    path:     /login
+    path:     /register
     defaults: { _controller: AppBundle:Invest:register }
+login:
+    path:     /login
+    defaults: { _controller: AppBundle:Invest:login }
 logged_in:
     path:    /
     defaults: {_controller: AppBundle:Invest:main }
