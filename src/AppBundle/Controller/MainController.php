@@ -22,12 +22,12 @@ class MainController extends Controller
     public function investAction($company)
     {
         $url = $this->generateUrl('invest_to_company', array('company' => $company));
-        $this->render('@App/Company/invest.html.twig', array('company' => $company));
+        return $this->render('@App/Company/invest.html.twig', array('company' => $company));
     }
 
 
-    public function LoanAction(Company $company)
+    public function LoanAction($company)
     {
-        
+        return $this->render('@App/Company/invest.html.twig', array('company' => $company));
     }
 }
