@@ -16,6 +16,16 @@ security:
 
         main:
             anonymous: ~
+#            pattern: ^/
+#            form_login:
+#                providers:
+#                    in_memory:
+#                        memory:
+#                            users:
+#                                jpotalujeva:
+#                                    password:
+#                                mandarin:
+#                                    password:
             # activate different ways to authenticate
 
             # http_basic: ~

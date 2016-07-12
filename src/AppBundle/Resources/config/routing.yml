@@ -19,3 +19,5 @@ invest_to_company:
 loan_to_company:
     path: /loan/{company}
     defaults: { _controller: AppBundle:Main:Loan }
+logout:
+    path: /logout
