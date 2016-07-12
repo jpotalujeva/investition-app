@@ -26,6 +26,8 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+            logout:
+                path: /logout
 #            pattern: ^/
 #            form_login:
 #                providers:
