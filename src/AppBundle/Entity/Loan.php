@@ -29,7 +29,8 @@ class Loan
     private $available_for_investments;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
+     * @ORM\OneToMany(targetEntity="Investment", mappedBy="loan")
      * @Assert\NotBlank()
      */
     private $investments;
@@ -59,7 +60,7 @@ class Loan
     }
 
     /**
-     * @param $availableForInvestments
+     * @param $available_for_investments
      */
     public function setAvailableForInvestments($available_for_investments)
     {

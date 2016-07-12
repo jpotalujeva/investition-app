@@ -25,6 +25,8 @@ class Investment
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
+     * @ORM\ManyToOne(targetEntity="Loan", inversedBy="investments")
+     * @ORM\JoinColumn(name="investments", referencedColumnName="investments")
      */
     private $investments;
 
