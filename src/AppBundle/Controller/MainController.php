@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Company;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class MainController extends Controller
@@ -18,13 +19,14 @@ class MainController extends Controller
         ));
     }
 
-    public function investAction()
+    public function investAction($company)
     {
-       
+        $url = $this->generateUrl('invest_to_company', array('company' => $company));
+        $this->render('@App/Company/invest.html.twig', array('company' => $company));
     }
 
 
-    public function LoanAction()
+    public function LoanAction(Company $company)
     {
         
     }
